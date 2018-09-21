@@ -1,0 +1,137 @@
+#navbar-title{
+	color: white;
+}
+#edit-p{
+text-decoration: none;
+}
+.ronly{
+	color: white;
+	width: 100%;
+}
+.modal-body .row .col #cal { 
+    -moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
+    -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
+    margin:50px auto; 
+    font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif; 
+    display:table; 
+}
+.modal-body .row .col #cal .header { 
+    cursor:default; 
+    background: #cd310d; 
+    background: -moz-linear-gradient(top, #b32b0c, #cd310d); 
+    background: -webkit-gradient(linear, left top, left bottom, from(#b32b0c), to(#cd310d)); 
+    height: 34px; 
+    position: relative; 
+    color:#fff; 
+    -webkit-border-top-left-radius: 5px; 
+    -webkit-border-top-right-radius: 5px; 
+    -moz-border-radius-topleft: 5px; 
+    -moz-border-radius-topright: 5px; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    font-weight:bold; 
+    text-shadow:0px -1px 0 #87260C; 
+    text-transform: uppercase;
+    width: 210px; 
+} 
+.modal-body .row .col #cal .header span { 
+    display:inline-block; 
+    line-height:34px; 
+}
+.modal-body .row .col #cal .header .button { 
+    width:24px; 
+    text-align:center; 
+    position:absolute; 
+    cursor: pointer;
+} 
+.modal-body .row .col #cal .header .left.button { 
+    left:0; 
+    -webkit-border-top-left-radius: 5px; 
+    -moz-border-radius-topleft: 5px; 
+    border-top-left-radius: 5px; 
+    border-right:1px solid #ae2a0c; 
+} 
+.modal-body .row .col #cal .header .right.button { 
+    right:0; 
+    top:0; 
+    border-left:1px solid #ae2a0c; 
+    -webkit-border-top-right-radius: 5px; 
+    -moz-border-radius-topright: 5px; 
+    border-top-right-radius: 5px; 
+} 
+.modal-body .row .col #cal .header .button:hover { 
+    background: -moz-linear-gradient(top, #d94215, #bb330f); 
+    background: -webkit-gradient(linear, left top, left bottom, from(#d94215), to(#bb330f)); 
+}
+.modal-body .row .col #cal .header .month-year { 
+    letter-spacing: 1px; 
+    width: 100%; 
+    text-align: center; 
+}
+.modal-body .row .col #cal table { 
+    background-color:#fff; 
+    border-collapse:collapse; 
+} 
+.modal-body .row .col #cal td { 
+    color:#2b2b2b; 
+    width:30px; 
+    height:30px; 
+    line-height:30px; 
+    text-align:center; 
+    border:1px solid #e6e6e6; 
+    cursor:pointer; 
+} 
+.modal-body .row .col #cal #days td { 
+    height:26px; 
+    line-height: 26px; 
+    text-transform:uppercase; 
+    font-size:90%; 
+    color:#9e9e9e; 
+} 
+.modal-body .row .col #cal #days td:not(:last-child) { 
+    border-right:1px solid #fff; 
+}
+.modal-body .row .col #cal #cal-frame td.today { 
+    background-color: #ededed; 
+    color:#8c8c8c; 
+    box-shadow:1px 1px 0px #fff inset; 
+    -moz-box-shadow:1px 1px 0px #fff inset; 
+    -webkit-box-shadow:1px 1px 0px #fff inset; 
+} 
+.modal-body .row .col #cal #cal-frame td span { 
+    font-size:80%; 
+    position:relative; 
+} 
+.modal-body .row .col #cal #cal-frame td span:first-child { 
+    bottom:5px; 
+} 
+.modal-body .row .col #cal #cal-frame td span:last-child { 
+    top:5px; 
+}
+.modal-body .row .col #cal #cal-frame table.curr { 
+    float:left;      
+} 
+.modal-body .row .col #cal #cal-frame table.temp { 
+    position:absolute; 
+}
+.modal-body .row .col #cal #cal-frame .months td{ 
+    color:#2b2b2b; 
+    width:70px; 
+    height:30px; 
+    line-height:30px; 
+    text-align:center; 
+    border:1px solid #e6e6e6; 
+    cursor:pointer; 
+}
+.modal-body .row .col #cal #change2months{
+	display: none;
+}
+.halfday{
+    background-color: rgb(250, 237, 46);
+}
+.fullday{
+    background-color: rgb(200, 94, 11);
+}
+.none{
+    background-color: rgb(255, 255, 255);
+}

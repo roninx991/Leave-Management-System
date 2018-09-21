@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PICT|LMS</title>
+		<link rel="shortcut icon" href="../assets/images/favicon.png">
+		<link rel="stylesheet" href="../dist/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	</head>
+	<body>
+
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+			  <a class="navbar-brand" id="navbar-title" href="../Home/">
+				  <img src="../assets/images/favicon.png" width="30" height="30" alt="P Favicon">
+				  PICT Leave Management System / Home
+			  </a>
+		</nav>
+		<!-- End Navbar -->
+		<div class="row" style="margin-right:0;">
+			<div class="col-md-6 col-sm-12" id="plms-instructions">
+				<div id="instructions">
+					<center><h3><strong>Instructions</strong></h3></center>
+					<ul id="instructions-list">
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12" id="plms-signin">
+				<div id="login" ng-app="">
+					<center><h3><strong>Login</strong></h3></center><br>
+					<center>
+					<img src="../assets/images/pict.png">
+					</center>
+					<div id="login-pane">
+						<center>
+						<form id="login-form" method="post" action="" name="loginForm">
+							<table>
+	                            <tr>
+	                                <td colspan = "2">
+		                                <center>
+		                                        <input type="radio" name="loginAs" value="Student" id="student" required>
+		                                        <label for = "student"><b>Student</b></label>
+		                                        <input type= "radio" name="loginAs" value="Faculty" id="faculty" required>
+		                                        <label for = "faculty"> <b>Faculty</b></label>
+		                                </center>
+	                                </td>
+	                            </tr> 
+	                            <tr>
+	                                <td>
+	                                    <label for = "username">UserID:&nbsp;</label>
+	                                </td>
+	                                <td>
+	                                    <input id="username" type = "text" name="username" required ng-model="uname"><br>
+										<span ng-show="loginForm.username.$touched && loginForm.username.$error.required" style="color:red;font-size:80%;">
+											Don't forget to enter the username.
+										</span>
+	                                </td>
+	                            </tr>           
+								<tr>
+									<td><label for="password">Password:&nbsp;</label></td>
+									<td> 
+	                                    <input id="password" type = "password" name="password" required ng-model="pass"><br>
+										<span ng-show="loginForm.password.$touched && loginForm.password.$error.required" style="color:red;font-size:80%;">
+											Don't forget to enter the password.
+										</span>
+	                                </td>
+								</tr>
+							</table><br>
+							<a href="forgot_password/">Forgot Password?</a>&nbsp;Or&nbsp;<a href="../SignUp/">New User?</a>
+	                        <center>
+	                            <input type="reset" id="reset" class="btn-danger" value="Reset" style="width:100px;font-weight:bold;">&nbsp;
+	                            <input type="button" id="login1" class="btn-success" value="Login" style="width:100px;font-weight:bold;">
+	                            <br><br>
+	                        </center>
+	                        </form>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="../dist/bootstrap.min.js"></script>
+		<script src="../assets/js/"></script>
+		<script type="text/javascript">
+		$("#login1").click(function() {	
+			var name1 = $("#username").val();
+			var pass1 = $("#password").val();
+			var loginAs = $("input[name='loginAs']:checked").val();
+			$.post("../php/login.php",
+				{
+					name : name1, 
+					pass : pass1,
+					type : loginAs
+				},
+				function(data, status) {
+					// alert(data);
+					if (data === "Student") {
+						window.location.href="../SignUp/Student/";
+					}
+					else if (data === "Faculty") {
+						window.location.href="../SignUp/Faculty/";
+					}
+					else if (data === "Head") {
+						window.location.href="../SignUp/Head/";	
+					}
+					else
+					{
+						alert(data);
+					}
+				});
+		});
+		</script>
+	</body>
+</html>

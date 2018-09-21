@@ -1,0 +1,39 @@
+#navbar-title{
+    color: white;
+}
+
+body
+{
+/*background: #36D1DC;  /* fallback for old browsers */
+/*background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+/*background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+input[type= "text"], input[type= "password"], input[type= "number"], input[type= "email"]
+{
+	background: transparent;
+	border: solid 1px black;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    black;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    black;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    black;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    black;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    black;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    black;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PICT|LMS</title>
+		<link rel="shortcut icon" href="../../assets/images/favicon.png">
+		<link rel="stylesheet" href="../../dist/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	</head>
+	<body ng-app="">
+
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+			  <a class="navbar-brand" id="navbar-title" href="../Home/">
+				  <img src="../../assets/images/favicon.png" width="30" height="30" alt="P Favicon">
+				  PICT Leave Management System / Forgot Password
+			  </a>
+            <a href="../" style="text-decoration:none;position:absolute;right:10px;top:20px;color:white;">Back</a> 
+		</nav>
+		<!-- End Navbar -->
+		<div style="margin-top:50px;"></div>
+		<center><h3><strong>Forgot your password? No worries!</strong></h3></center>
+		<div class="row" style="margin-right:0;">
+
+			<div class="col-md-12 col-sm-12" id="login-pane">
+				<center>
+				<form id="forgot-form" method="post" name="forgotForm">
+					<table>
+                        <tr>
+                            <td colspan = "2">
+                                <center>
+                                        <input type="radio" name="loginAs" value="Student" id="student" required>
+                                        <label for = "student"><b>Student</b></label>
+                                        <input type= "radio" name="loginAs" value="Faculty" id="faculty" required>
+                                        <label for = "faculty"> <b>Faculty</b></label>
+                                </center>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td>
+                                <label for = "username">UserID:&nbsp;</label>
+                            </td>
+                            <td>
+                                <input id="username" type = "text" name="username" required placeholder="Enter Username" ng-model="uname"><br>
+                                <span ng-show="forgotForm.username.$touched && forgotForm.username.$error.required" style="color:red;font-size:80%;">Don't forget to enter the username.</span>
+                            </td>
+                        </tr>
+						<tr>
+							<td><label for="hint">Hint Question:&nbsp;</label></td>
+							<td> 
+                                <select id="hint" name="hint" required>
+                                	<option value="null">Select Hint Question</option>
+                                    <option value="1">What is your pet name?</option>
+                                    <option value="2">Which site do you visit the least?</option>
+                                    <option value="3">What is your favourite color?</option>
+                                    <option value="4">What was your mother's maiden name?</option>
+                                    <option value="5">Where did you go for pre-school?</option>                                
+                                </select>
+                            </td>
+						</tr>
+                        <tr>
+                            <td>
+                                <label for = "answer">Answer:&nbsp;</label>
+                            </td>
+                            <td>
+                                <input id="answer" type = "text" name="answer" required placeholder="Your Answer" ng-model="answer"><br>
+                                <span ng-show="forgotForm.answer.$touched && forgotForm.answer.$error.required" style="color:red;font-size:80%;">Don't forget to enter the answer.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for = "password">New Password:&nbsp;</label>
+                            </td>
+                            <td>
+                                <input id="password" type = "password" name="password" required minlength="8" placeholder="Type New Password" ng-model="pass" required><br>
+                                <span ng-show="forgotForm.password.$touched && forgotForm.password.$error.required" style="color:red;font-size:80%;">Don't forget to enter the new password.</span>
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td>
+                                <label for = "rpassword">Re-type Password:&nbsp;</label>
+                            </td>
+                            <td>
+                                <input id="rpassword" type = "password" name="rpassword" required minlength="8" placeholder="Re-Type New Password" ng-model="rpass" required><br>
+                                <span ng-show="forgotForm.rpassword.$touched && forgotForm.rpassword.$error.required" style="color:red;font-size:80%;">
+                                	Don't forget to retype the password.</span>
+                            </td>
+                        </tr>
+					</table>
+                    <center>
+                        <br>
+                        <input type="button" id="cancel" class="btn-danger" value="Go Back" style="width:100px;font-weight:bold;" onclick="openInNewTab('../index.html')">&nbsp;
+                        <input type="button" id="reset" class="btn-success" value="Reset" style="width:100px;font-weight:bold;">
+                    </center><br><br>
+
+                    </form>
+				</center>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="../../dist/bootstrap.min.js"></script>
+		<script src="../../assets/js/common.js"></script>
+
+		<script type="text/javascript">
+			$("#reset").click(function() {	
+				alert("Hello");
+				var name1 = $("#username").val();
+				var pass1 = $("#password").val();
+				var pass2 = $("#rpassword").val();
+				var loginAs = $("input[name='loginAs']:checked").val();
+				var hint = $("#hint").val();
+				var ans = $("#answer").val();
+				if (pass1 === pass2) {
+				$.post("../../php/forgot.php",
+					{
+						name : name1, 
+						pass : pass1,
+						type : loginAs,
+						hintq : hint,
+						answer : ans
+					},
+					function(data, status) {
+						// alert(data);
+						if (data === "Successfully Updated") {
+							alert(data);
+						}
+						else
+						{
+							alert(data);
+						}
+					});
+				}
+				else
+				{
+					alert("Password Mismatch!!");
+				}
+			});
+
+		</script>
+	</body>
+</html>

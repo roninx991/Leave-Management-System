@@ -1,0 +1,90 @@
+body{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	font-size: 125%;
+	font-family: 'Arial',sans-serif;
+}
+#navbar-title{
+	color: white;
+}
+#plms-instructions{
+	
+}
+#instructions{
+	border-right: solid 1px #888;
+	margin: 50px 0 0 0;
+}
+#instructions-list{
+	margin-top: 50px;
+}
+#login{
+	margin: 50px 0 0 0;	
+}
+#instructions-list{
+	margin: 20px 30px 0 30px;
+	background-color: #CCC;
+	padding: 15px;
+	border-radius: 5px;
+	list-style: none;
+}
+#instructions-list li{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-left: 15px;
+}
+#login-pane{
+	margin-top: 50px;
+}
+#login-alert{
+}
+input[type="radio"]{
+	margin-left: 20px; 
+}
+p{
+	text-align: center;
+}
+td{
+	padding: 10px;
+}
+input{
+	border-radius: 3px;
+	padding: 10px;
+}
+input[type="text"], input[type="password"] {
+	width: 400px;
+}
+input, textarea{
+	background-color: white;
+	color: black;
+	border: solid 1px black;
+	-webkit-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+input:focus, textarea:focus{
+	box-shadow: 2px 2px 3px #333;
+}
+option{
+	padding: 10px;
+}
+input[type="button"], input[type="reset"]{
+	cursor: pointer;
+}
+@media all and (max-height: 641px){
+	body{
+		font-size: 80%;
+	}
+	input[type="text"], input[type="password"]
+	{
+		width: 200px;
+	}
+	#instructions{
+	border-right: none;
+	}
+	select{
+		width: 200px;
+	}
+
+}
